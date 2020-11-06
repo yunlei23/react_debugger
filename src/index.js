@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react-debugger';
+import ReactDOM from 'react-debugger/packages/react-dom';
 import './index.css';
-import App from './App';
+import UpdateCounter from './UpdateCounter';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <UpdateCounter />
   </React.StrictMode>,
   document.getElementById('root')
 );
