@@ -295,7 +295,7 @@ function throwInvalidHookError() {
       'See https://fb.me/react-invalid-hook-call for tips about how to debug and fix this problem.',
   );
 }
-
+// useEffect hook deps对比
 function areHookInputsEqual(
   nextDeps: Array<mixed>,
   prevDeps: Array<mixed> | null,
@@ -651,7 +651,7 @@ function mountReducer<S, I, A>(
   ): any));
   return [hook.memoizedState, dispatch];
 }
-
+// hook useReducer
 function updateReducer<S, I, A>(
   reducer: (S, A) => S,
   initialArg: I,
@@ -861,7 +861,7 @@ function mountState<S>(
   ): any));
   return [hook.memoizedState, dispatch];
 }
-
+// hook useState
 function updateState<S>(
   initialState: (() => S) | S,
 ): [S, Dispatch<BasicStateAction<S>>] {
@@ -928,7 +928,7 @@ function mountEffectImpl(fiberEffectTag, hookEffectTag, create, deps): void {
     nextDeps,
   );
 }
-
+// hook useEffect
 function updateEffectImpl(fiberEffectTag, hookEffectTag, create, deps): void {
   const hook = updateWorkInProgressHook();
   const nextDeps = deps === undefined ? null : deps;

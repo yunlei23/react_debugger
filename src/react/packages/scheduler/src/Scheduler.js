@@ -291,7 +291,7 @@ function timeoutForPriorityLevel(priorityLevel) {
       return NORMAL_PRIORITY_TIMEOUT;
   }
 }
-
+// 调度器入口函数
 function unstable_scheduleCallback(priorityLevel, callback, options) {
   var currentTime = getCurrentTime();
 

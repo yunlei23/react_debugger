@@ -609,7 +609,7 @@ function markRef(current: Fiber | null, workInProgress: Fiber) {
     workInProgress.effectTag |= Ref;
   }
 }
-
+// fiber unitwork 更新函数组件
 function updateFunctionComponent(
   current,
   workInProgress,
@@ -2882,7 +2882,7 @@ function remountFiber(
     );
   }
 }
-
+// fiber unitwork begin
 function beginWork(
   current: Fiber | null,
   workInProgress: Fiber,

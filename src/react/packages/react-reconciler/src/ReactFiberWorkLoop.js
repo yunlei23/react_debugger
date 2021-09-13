@@ -1470,7 +1470,7 @@ function workLoopConcurrent() {
     workInProgress = performUnitOfWork(workInProgress);
   }
 }
-
+// fiber 执行工作单元
 function performUnitOfWork(unitOfWork: Fiber): Fiber | null {
   // The current, flushed, state of this fiber is the alternate. Ideally
   // nothing should rely on this, but relying on it here means that we don't
@@ -1499,7 +1499,7 @@ function performUnitOfWork(unitOfWork: Fiber): Fiber | null {
   ReactCurrentOwner.current = null;
   return next;
 }
-
+// fiber unitwork 结束
 function completeUnitOfWork(unitOfWork: Fiber): Fiber | null {
   // Attempt to complete the current unit of work, then move to the next
   // sibling. If there are no more siblings, return to the parent fiber.
@@ -1534,7 +1534,7 @@ function completeUnitOfWork(unitOfWork: Fiber): Fiber | null {
         // Completing this fiber spawned new work. Work on that next.
         return next;
       }
-
+// fiber unitwork 搜集effectlist
       if (
         returnFiber !== null &&
         // Do not append effects to parents if a sibling failed to complete
@@ -1707,7 +1707,7 @@ function resetChildExpirationTime(completedWork: Fiber) {
 
   completedWork.childExpirationTime = newChildExpirationTime;
 }
-
+// commit 入口函数
 function commitRoot(root) {
   const renderPriorityLevel = getCurrentPriorityLevel();
   runWithPriority(
@@ -2215,7 +2215,7 @@ function invokePassiveEffectCreate(effect: HookEffect): void {
   const create = effect.create;
   effect.destroy = create();
 }
-
+// commit 执行effectlist
 function flushPassiveEffectsImpl() {
   if (rootWithPendingPassiveEffects === null) {
     return false;
